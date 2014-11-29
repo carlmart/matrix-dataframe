@@ -5,7 +5,7 @@
 First read in your demo.csv file into a variable popmatrix.
 Then find means and sum of columns using the apply command.
 
-```sh
+```r
 popmatrix <- read.csv("demo.csv")
 colMeans <- apply(popmatrix,2,mean)
 colSum <- apply(popmatrix,2,sum)
@@ -15,10 +15,24 @@ Convert popmatrix to a data.frame & view the first few lines
 pop.df <- data.frame(popmatrix)
 head(pop.df)
 ```
-What is the average age, weight and height of columns 2-4 ?
+What are the names of the columns?
+```r
+names(pop.df)
+```
+How many rows and how many columns are there in this dataset?
+```r
+nrow(pop.df)
+ncol(pop.df)
+```
+
+What is the average age, weight and height of this data.matrix ?
+Remember that column 1 (pop.df$Sex) is a factor , while column 
+2 to 4 are numeric so an average can be calculated.
+
 ```sh
 apply(pop.df[,2:4],Sex,mean)
 ```
+
 In order to NOT use the long format for data.frames as shown below : 
 ```sh
 pop.df$age 
